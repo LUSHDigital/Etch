@@ -15,23 +15,46 @@ Minimal library to create android views from JSON. No dependencies are used so t
 - You avoid version conflicts via transitive dependencies e.g. Gson, Android Support Library
 
 
-Usage
+Setup
 --------
 
-**Step 1.** Initialise the type parser, which works out which type it should render. This is necessary because this library deliberately does not parse any Gson, leaving it to the calling code to use the appropriate library.
+**1.** Create a TypeParser. This will be used to determine which view should be rendered. You need to provide this because the library does not handle JSON parsing itself.
+
+```kotlin
+class ObjectTypeParser: TypeParser() {
+    override fun parse(json: String): String { // TODO: Implement parsing }
+}
+```
+
+**2.** Initialise using the created `TypeParser`
 
 ```kotlin
 Etch.initialise(ObjectTypeParser())
 ```
 
-**Step 2.** Register to map types an instance of `Etcher`, which builds the view
+**3.** Create `Etcher` classes for each view type you wish to render. Below is an example for image rendering
+
+```kotlin
+data class Image(val url: String)
+class ImageEtcher: Etcher<Image>() {
+    override fun parse(json: String): List<Image>? = listOfNotNull(Klaxon().parse<Image>(json))
+    override fun provideLayout(): Int = R.layout.item_picture
+    override fun bindView(view: View, model: Image) {
+        Picasso.get().load((model as Image).url).into(view.etch_picture)
+    }
+}
+```
+
+**4.** Register `Etcher` classes with `Etch` to create a mapping between view types and `Etchers` so said views can be rendered
 
 ```kotlin
 Etch.register("image", ImageEtcher())
 Etch.register("text", TextEtcher())
 ```
 
-**Step 3.** Etch JSON straight into a view
+Usage
+--------
+
 ```kotlin
 Etch(json).into(view)
 ```
