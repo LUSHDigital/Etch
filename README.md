@@ -67,7 +67,7 @@ Etch(json).into(view)
 Download
 --------
 
-**Step 1.** Add the [JitPack](https://jitpack.io) repository to your build file
+**1.** Add the [JitPack](https://jitpack.io) repository to your build file
 
 Add it in your root build.gradle at the end of repositories:
 
@@ -79,7 +79,7 @@ allprojects {
 }
 ```
 
-**Step 2.** Add the dependency  
+**2.** Add the dependency  
 
 ```groovy
 dependencies {
