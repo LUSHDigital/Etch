@@ -3,7 +3,7 @@ Etch
 
 Create Android views from JSON with no dependencies.
 
-![](github/etch.jpg)
+<img src="github/etch.jpg" width="350" height="277" />
 
 Overview
 --------
