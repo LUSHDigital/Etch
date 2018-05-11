@@ -1,4 +1,4 @@
-package com.lush.library.etch
+package uk.co.jamiecruwys.etch
 
 import android.util.NoSuchPropertyException
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ class Etch(private val json: String) {
     companion object {
         private val etchers = LinkedHashMap<String, Etcher<Any>>()
         private var typeParser: TypeParser? = null
-        fun initialise(typeParser: TypeParser) { this.typeParser = typeParser }
+        fun initialise(typeParser: TypeParser) { Companion.typeParser = typeParser }
         fun register(type: String, etcher: Etcher<Any>) { etchers[type] = etcher }
     }
 

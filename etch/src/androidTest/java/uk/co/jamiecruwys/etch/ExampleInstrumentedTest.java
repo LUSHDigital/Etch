@@ -1,4 +1,4 @@
-package com.lush.library.etch;
+package uk.co.jamiecruwys.etch;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.lush.library.etch.test", appContext.getPackageName());
+        assertEquals("uk.co.jamiecruwys.etch.test", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.lush.etch
+package uk.co.jamiecruwys.etch.sample
 
 import org.junit.Test
 

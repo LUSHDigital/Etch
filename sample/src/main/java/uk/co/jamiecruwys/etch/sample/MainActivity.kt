@@ -1,17 +1,16 @@
-package com.lush.etch
+package uk.co.jamiecruwys.etch.sample
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.beust.klaxon.Klaxon
-import com.lush.library.etch.R
-import com.lush.library.etch.Etch
-import com.lush.library.etch.Etcher
-import com.lush.library.etch.TypeParser
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_picture.view.*
 import kotlinx.android.synthetic.main.item_text.view.*
+import uk.co.jamiecruwys.etch.Etch
+import uk.co.jamiecruwys.etch.Etcher
+import uk.co.jamiecruwys.etch.TypeParser
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

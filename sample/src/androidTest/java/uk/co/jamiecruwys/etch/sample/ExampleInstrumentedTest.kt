@@ -1,4 +1,4 @@
-package com.lush.library.etch
+package uk.co.jamiecruwys.etch.sample
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.lush.library.etch", appContext.packageName)
+        assertEquals("uk.co.jamiecruwyscom.etch.sample", appContext.packageName)
     }
 }
