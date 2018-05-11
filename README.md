@@ -5,6 +5,9 @@ Create Android views from JSON with no dependencies.
 
 <img src="github/etch.jpg" width="350" height="277" />
 
+Usage
+--------
+
 ```kotlin
 Etch(json).into(view)
 ```
@@ -59,13 +62,6 @@ data class Image(val url: String)
 ```kotlin
 Etch.register("image", ImageEtcher())
 Etch.register("text", TextEtcher())
-```
-
-Usage
---------
-
-```kotlin
-Etch(json).into(view)
 ```
 
 Download
