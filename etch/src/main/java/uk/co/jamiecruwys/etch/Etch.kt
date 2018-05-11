@@ -3,6 +3,7 @@ package uk.co.jamiecruwys.etch
 import android.util.NoSuchPropertyException
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
 import org.json.JSONException
 import java.util.NoSuchElementException
@@ -15,7 +16,7 @@ class Etch(private val json: String) {
         fun register(type: String, etcher: Etcher<Any>) { etchers[type] = etcher }
     }
 
-    fun into(root: LinearLayout) {
+    fun into(root: ViewGroup) {
         typeParser ?: throw NullPointerException("Type parser is not set")
         val type = typeParser?.parse(json) ?: throw NoSuchPropertyException("No type property found for model")
         val etcher = etchers[type] ?: throw NoSuchElementException("No matching element for type")
