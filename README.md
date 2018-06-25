@@ -83,6 +83,6 @@ allprojects {
 
 ```groovy
 dependencies {
-    implementation 'com.github.JamieCruwys:Etch:master-SNAPSHOT'
+    implementation 'com.github.LUSHDigital:Etch:master-SNAPSHOT'
 }
 ```
